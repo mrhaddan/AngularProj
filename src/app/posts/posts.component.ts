@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -11,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class PostsComponent implements OnInit {
 
   posts$: Object;
-  constructor(private data: DataService, private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.posts$ = params.id);
+  constructor(private data: DataService) {
+
   }
 
   ngOnInit() {
